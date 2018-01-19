@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-sm-12">
+    <%= @article.name %>
+  </div>
+  <div class="col-sm-12">
+    <%= @article.description %>
+  </div>
+  <div class="col-sm-12">
+    <%= @article.category.name %>
+  </div>
+  <div class="col-sm-12">
+    <%= @article.author.name %>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <% @comments.each do |cm| %>
+    <div class="col-sm-12"><%= cm.name %></div>
+  <% end %>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <%= render partial: "comments/form", locals: {comment: @comment} %>
+  </div>
+</div>

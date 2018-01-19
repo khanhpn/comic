@@ -1,0 +1,13 @@
+<%= link_to "New", new_article_path, class: "btn btn-success" %>
+<div class="row">
+  <% @articles.each do |article| %>
+    <div class="col-sm-12">
+      <div class="alert alert-primary" role="alert">
+        <%= link_to "Detail", article_path(article), class: "btn btn-success" %>
+        <%= article.name %>
+        <%= link_to "Edit", edit_article_path(article), class: "btn btn-success" %>
+        <%= link_to "Delete", article_path(article), class: "btn btn-success", method: :delete %>
+      </div>
+    </div>
+  <% end %>
+</div>
